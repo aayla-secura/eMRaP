@@ -58,7 +58,7 @@ This package uses the Gmail OAuth2 API and requires credentials for an OAuth cli
 
 # USAGE
 
-Import `actions.HttpAutomator` and `run` it. See `demos/demo.py` for examples.
+Import `actions.HttpAutomator` and `run` it. See [demos](/demos) for examples.
 
     usage: demo.py --creds-file CREDS_FILE [--token-file TOKEN_FILE]
                    [--query QUERY]
