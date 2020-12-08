@@ -1,11 +1,14 @@
 from setuptools import setup, find_packages
 
 with open('README.md', 'r') as fh:
-    long_description = fh.read()
+    desc_lines = fh.readlines()
+
+long_description = ''.join(
+    filter(lambda line: '<img' not in line, desc_lines))
 
 setup(
     name='emrap',
-    version='1.0',
+    version='1.0.post1',
     url='https://github.com/aayla-secura/eMRaP',
     author='AaylaSecura1138',
     author_email='aayla.secura.1138@gmail.com',
