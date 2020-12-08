@@ -17,6 +17,10 @@ An example usage is a password reset where you send a request to get a password 
 
 # SETUP
 
+# Installation
+
+`pip3 install emrap`
+
 # Creating an OAuth client
 
 This package uses the Gmail OAuth2 API and requires credentials for an OAuth client, which you can create in the Google dev console (no GSuite needed). Then you need to authorize the app to access the emails of the target account (which can be any Google account, not just the one that owns the client credentials). Follow these steps:
