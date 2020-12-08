@@ -27,42 +27,34 @@ This package uses the Gmail OAuth2 API and requires credentials for an OAuth cli
 
 1. Go to https://console.developers.google.com/apis/ and create a project.
 
-![Create a project step 1](/images/create-project-1.png)
-
-![Create a project step 2](/images/create-project-2.png)
+<p><img src="images/create-project-1.png" width="100%"></p><hr>
+<p><img src="images/create-project-2.png" width="70%"></p>
 
 2. Go to https://console.developers.google.com/apis/credentials/consent and configure your app. Select the project if not selected, then choose between Internal or External app. Enter your app name and click on Save and continue several times until you finish that wizard and then Back to Dashboard.
 
-![Setup consent screen step 1](/images/oauth-consent-1.png)
-
-![Setup consent screen step 2](/images/oauth-consent-2.png)
+<p><img src="images/oauth-consent-1.png" width="60%"></p><hr>
+<p><img src="images/oauth-consent-2.png" width="60%"></p>
 
 3. Go to https://console.developers.google.com/apis/credentials and create credentials of type OAuth client ID. Select Desktop App as the Application Type and name it.
 
-![Create the client credentials step 1](/images/create-creds-1.png)
-
-![Create the client credentials step 2](/images/create-creds-2.png)
-
+<p><img src="images/create-creds-1.png" width="80%"></p><hr>
+<p><img src="images/create-creds-2.png" width="80%"></p>
 
 4. Click on the download button to download your credentials JSON file (does not work in Firefox). Rename it to credentials.json and put it in the same directory as the python client.
 
-![Download credentials](/images/download-creds.png)
+<p><img src="images/download-creds.png" width="100%"></p>
 
 5. Go to https://console.developers.google.com/apis/library/gmail.googleapis.com?q=gmail api and enable to Gmail API.
 
-![Enable Gmail API](/images/enable-api.png)
+<p><img src="images/enable-api.png" width="70%"></p>
 
 6. Start the client which will open the OAuth consent screen in the browser. Follow the prompts to allow it, ignoring the warning it's unverified (you'll need to [get it verified](https://support.google.com/cloud/answer/9110914?hl=en) if you want to use it for non-testing purposes). You'll only need to authorise this once.
 
-![Authorise the app step 1](/images/authorise-1.png)
-
-![Authorise the app step 2](/images/authorise-2.png)
-
-![Authorise the app step 3](/images/authorise-3.png)
-
-![Authorise the app step 4](/images/authorise-4.png)
-
-![Authorise the app step 5](/images/authorise-5.png)
+<p><img src="images/authorise-1.png" width="60%"></p><hr>
+<p><img src="images/authorise-2.png" width="60%"></p><hr>
+<p><img src="images/authorise-3.png" width="60%"></p><hr>
+<p><img src="images/authorise-4.png" width="60%"></p><hr>
+<p><img src="images/authorise-5.png" width="60%"></p>
 
 # USAGE
 
