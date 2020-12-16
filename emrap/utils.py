@@ -88,6 +88,7 @@ def smart_open(arg, *args, **kwargs):
     # close it only if it was a filename, but not if it was an
     # opened FD or file-like object
     do_close = isinstance(arg, str)
+    fh = None
     try:
         if arg == '-':
             fh = sys.stdout
@@ -100,7 +101,7 @@ def smart_open(arg, *args, **kwargs):
                 arg.__class__.__name__))
         yield fh
     finally:
-        if do_close:
+        if do_close and fh is not None:
             fh.close()
 
 def encode(v, encoding='utf-8'):
