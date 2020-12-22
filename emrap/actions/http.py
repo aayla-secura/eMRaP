@@ -17,9 +17,6 @@ from ..utils import nat, smart_open, decode
 from ..extracts import ExtractDirectives, ExtractDirectivesContainer
 from .common import ArgumentDefaultsSmartHelpFormatter
 
-import urllib3
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
 
 logger = logging.getLogger(__name__)
 

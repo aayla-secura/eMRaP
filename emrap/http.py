@@ -17,6 +17,9 @@ from .utils import str_trunc, smart_open
 from .common import Searchable
 from .extracts import OrderedExtracts
 
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 
 logger = logging.getLogger(__name__)
 
