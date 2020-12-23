@@ -8,7 +8,7 @@ long_description = ''.join(
 
 setup(
     name='emrap',
-    version='1.0.post1',
+    version='1.0.1',
     url='https://github.com/aayla-secura/eMRaP',
     author='AaylaSecura1138',
     author_email='aayla.secura.1138@gmail.com',
