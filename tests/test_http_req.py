@@ -269,8 +269,8 @@ except (ReadTimeout, socket.timeout, ConnectionRefusedError):
 
 print('~~~~~~~~~~ HttpRequest LSHORT ~~~~~~~~~~')
 hreq = HttpRequest(CONTENT_LEN_SHORT, timeout=TIMEOUT)
-assert hreq.headers['Content-Length'] == str(10)
-assert len(hreq.content) == 10
+assert hreq.headers['Content-Length'] == str(21)
+assert len(hreq.content) == 21
 assert hreq.raw == CONTENT_LEN_SHORT
 try:
     resp = hreq.send()
@@ -279,8 +279,8 @@ except (ReadTimeout, socket.timeout, ConnectionRefusedError):
 
 print('~~~~~~~~~~ HttpRequestRaw LSHORT ~~~~~~~~~~')
 hreq = HttpRequestRaw(CONTENT_LEN_SHORT, timeout=TIMEOUT)
-assert hreq.headers['Content-Length'] == str(10)
-assert len(hreq.content) == 10
+assert hreq.headers['Content-Length'] == str(21)
+assert len(hreq.content) == 21
 assert hreq.raw == CONTENT_LEN_SHORT
 try:
     resp = hreq.send()
@@ -289,8 +289,8 @@ except (ReadTimeout, socket.timeout, ConnectionRefusedError):
 
 print('~~~~~~~~~~ HttpRequest LNONE ~~~~~~~~~~')
 hreq = HttpRequest(CONTENT_LEN_NONE, timeout=TIMEOUT)
-assert hreq.headers['Content-Length'] == str(0)
-assert len(hreq.content) == 0
+assert hreq.headers['Content-Length'] == str(21)
+assert len(hreq.content) == 21
 assert hreq.raw == CONTENT_LEN_NONE
 try:
     resp = hreq.send()
@@ -299,8 +299,8 @@ except (ReadTimeout, socket.timeout, ConnectionRefusedError):
 
 print('~~~~~~~~~~ HttpRequestRaw LNONE ~~~~~~~~~~')
 hreq = HttpRequestRaw(CONTENT_LEN_NONE, timeout=TIMEOUT)
-assert hreq.headers['Content-Length'] == str(0)
-assert len(hreq.content) == 0
+assert hreq.headers['Content-Length'] == str(21)
+assert len(hreq.content) == 21
 assert hreq.raw == CONTENT_LEN_NONE
 try:
     resp = hreq.send()

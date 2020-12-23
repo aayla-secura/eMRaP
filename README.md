@@ -235,7 +235,3 @@ Import `actions.HttpAutomator` and `run` it. See the demos for examples.
                             flood your screen with virtually useless information.
                             (default: None)
       --help, -h            Show this help message and exit.
-
-# KNOWN BUGS
-
-When replacing extract placeholders with data, the content-length is not updated. When the replacement value is longer than the placeholder, this means the request will be truncated. As a temporary workaround, set the Content-Length in the original request file to be much larger (at least as large as what is expected to be the final body after replacement). Fix coming soon.

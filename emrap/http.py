@@ -113,11 +113,29 @@ class _BaseHttp(Searchable):
             msg = ('Read {} bytes from {} data, expected {}. '
                    'Check you Content-Length header').format(
                        nread, self._type, ninput)
-            if retry:
-                logger.warning(msg)
-                self._parse(raw_parsed, retry=False)
-                return raw
-            raise ParseError(msg)
+            if not retry:
+                raise ParseError(msg)
+
+            logger.info(msg)
+            # get the actual length of the body
+            raw_h, raw_sep, raw_b = re.split(b'(\r?\n){2}', raw, maxsplit=1)
+            cl = len(raw_b)
+            cl_b = str(cl).encode('utf-8')
+            logger.info(('Will update the Content-Length to '
+                        '{}').format(cl))
+
+            if re.search(b'^content-length:', raw, flags=re.I | re.M):
+                # substitute header
+                raw_todo = re.sub(
+                    b'(content-length: *)[0-9]+',
+                    rb'\g<1>' + cl_b,
+                    raw, flags=re.I)
+            else:
+                # add header
+                raw_todo = raw_h + raw_sep + b'Content-Length: ' + \
+                    cl_b + raw_sep * 2 + raw_b
+            self._parse(raw_todo, retry=False)
+            return raw
 
         if not self._parser.is_headers_complete():
             logger.warning(
